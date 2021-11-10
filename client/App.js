@@ -14,7 +14,7 @@ const App =(props)=> {
 
     const handleSubmit = async() => {
         event.preventDefault();
-        const {data:returnedRestList} =  await axios.get("api/restaurants",{params:{name,rating,distance,price,cuisine}})
+        const returnedRestList=  (await axios.get("api/restaurants",{params:{name,rating,distance,price,cuisine}})).data
         setResList(returnedRestList)
     }
 
