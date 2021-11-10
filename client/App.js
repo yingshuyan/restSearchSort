@@ -8,7 +8,7 @@ const App =(props)=> {
     const [distance,setDistance] = useState("")
     const [price,setPrice] = useState("")
     const [cuisine,setCuisine] = useState("")
-    const [restList,setResList] = useState([])
+    const [restList,setResList] = useState([1])
     const [error,setError] = useState("")
 
 
@@ -57,7 +57,7 @@ const App =(props)=> {
         <div style={{flexDirection:"column",display:"flex",width:"100%",fontSize:"30px"}}>
             Restaurant List
             <div>{error}</div>
-            {restList.map((rest,ind)=>
+            {restList[0]!==1?restList.map((rest,ind)=>
                 <ul key ={rest.id}>
                     <li>No {ind+1}</li>
                     <li>Name: {rest.name}</li>
@@ -65,7 +65,7 @@ const App =(props)=> {
                     <li>Customer Rating: {rest.customer_rating}</li>
                     <li>Price: {rest.price}</li>
                     <li>Cuisine: {rest.cuisine.name}</li>
-                </ul>)}
+                </ul>):null}
         </div>
     </div>
     }
