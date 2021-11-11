@@ -56,8 +56,8 @@ Restaurant.filter = async(name,distance,price,rating,cuisineList) => {
 Restaurant.sort=async(restList)=>{
     return restList.sort((a,b)=>{
 
-        if(a.distance==b.distance){
-            if(a.customer_rating==b.customer_rating){
+        if(a.distance===b.distance){
+            if(a.customer_rating===b.customer_rating){
                 return a.price-b.price
             }else{
                 return b.customer_rating - a.customer_rating
